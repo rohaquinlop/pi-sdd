@@ -1,50 +1,13 @@
-# Technical Design Specification
+# Design: <change-name>
 
-## Architecture Overview
-[Components and data flow. ASCII or mermaid diagram where helpful.]
+## Technical Approach
 
-```mermaid
-graph TD
-    A[Client] --> B[Service]
-    B --> C[Database]
-```
+<!-- Architecture, data flow, key components touched or introduced. -->
 
-## Technology Stack
-| Layer | Choice | Rationale |
-|-------|--------|-----------|
-| Frontend | [framework] | [why] |
-| Backend | [runtime/framework] | [why] |
-| Storage | [database] | [why] |
-| Testing | [framework] | [why] |
+## Alternatives Considered
 
-## Data Model
-[Schemas, relationships, migrations.]
+<!-- Optional. Only include if a non-obvious choice was made between real alternatives. -->
 
-```sql
-CREATE TABLE example (
-    id UUID PRIMARY KEY,
-    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
-);
-```
+## Open Questions
 
-## API / Interface Design
-### [Method] [endpoint]
-- Request: [shape]
-- Response: [shape, status codes]
-- Errors: [error format]
-
-## Security Considerations
-- [authentication / authorization]
-- [secrets management]
-- [data protection]
-
-## Performance Considerations
-- [expected load, caching, indexing]
-
-## Deployment / Operations
-- [environments, deployment strategy, observability]
-
-## Technical Risks and Mitigations
-| Risk | Impact | Probability | Mitigation |
-|------|--------|-------------|------------|
-| [risk] | [high/med/low] | [high/med/low] | [mitigation] |
+<!-- Only things that cannot be known until code is touched. Anything resolvable now should already be resolved via the clarification UI (clarification_ui) before this file is written. -->

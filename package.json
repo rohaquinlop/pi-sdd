@@ -1,9 +1,10 @@
 {
   "name": "pi-sdd",
   "version": "0.1.0",
-  "description": "Spec-driven development workflow for pi: /sdd: slash commands for requirements → design → tasks → implementation with approval gates.",
+  "description": "Spec-driven development workflow for pi: /sdd:explore, /sdd:propose, /sdd:apply, /sdd:archive. Pure Markdown, no dependencies, no telemetry.",
   "keywords": ["pi-package", "spec-driven-development", "sdd"],
   "license": "MIT",
+  "repository": "https://github.com/rohaquinlop/pi-sdd",
   "pi": {
     "skills": ["./skills"],
     "prompts": ["./prompts"]
