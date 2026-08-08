@@ -62,8 +62,7 @@ See [`examples/`](./examples/) for a full walkthrough of the `explore → propos
 
 | Claude Code (spec-driven-framework) | pi (this port) |
 |---|---|
-| `/sdd:*` skills registered via plugin marketplace | `/sdd:*` prompt templates (in `prompts/`) dispatching to the same four skills |
-| `AskUserQuestion` tool for ambiguous decisions | pi's `clarification_ui` tool — same semantics: recommended option first, real alternatives, free-text "Other" |
+| `/sdd:*` skills registered via plugin marketplace | `/sdd:*` prompt templates (in `prompts/`) dispatching to the same four skills — declared explicitly in `pi.prompts` so the autocomplete dropdown shows them in workflow order: explore → propose → apply → archive || `AskUserQuestion` tool for ambiguous decisions | pi's `clarification_ui` tool — same semantics: recommended option first, real alternatives, free-text "Other" |
 | `$ARGUMENTS` in skill text | arguments passed by the template expansion; skills read "the name/idea the user provided" |
 | `/plugin marketplace add` + `/plugin install` | `pi install git:github.com/rohaquinlop/pi-sdd` |
 | `claude plugin validate . --strict` | `bun scripts/validate.mjs` (also runs in CI) |

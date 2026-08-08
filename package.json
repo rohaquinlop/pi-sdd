@@ -7,6 +7,11 @@
   "repository": "https://github.com/rohaquinlop/pi-sdd",
   "pi": {
     "skills": ["./skills"],
-    "prompts": ["./prompts"]
+    "prompts": [
+      "./prompts/sdd:explore.md",
+      "./prompts/sdd:propose.md",
+      "./prompts/sdd:apply.md",
+      "./prompts/sdd:archive.md"
+    ]
   }
 }

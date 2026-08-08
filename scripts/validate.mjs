@@ -76,6 +76,21 @@ check(expanded.includes("add-dark-mode") && !expanded.includes("$@"), "sdd:propo
 check(expand("/sdd:apply") !== "/sdd:apply", "sdd:apply: expands with no args");
 check(expand("/sdd:missing foo") === "/sdd:missing foo", "unknown command passes through untouched");
 
+// --- Manifest order ---------------------------------------------------------
+
+// The /sdd:* commands all score identically in pi's fuzzy autocomplete, and its
+// sort is stable — so the dropdown order IS the load order. Explicit file paths
+// in the manifest are loaded in manifest order (directory scans are not
+// deterministic), so pi.prompts declares them in workflow order.
+let manifestPrompts = [];
+const pkg = JSON.parse(readFileSync(join(repoRoot, "package.json"), "utf8"));
+manifestPrompts = pkg.pi?.prompts ?? [];
+const manifestOrder = manifestPrompts.map((p) => basename(p, ".md"));
+check(
+  JSON.stringify(manifestOrder) === JSON.stringify(EXPECTED_COMMANDS),
+  `package.json pi.prompts lists commands in workflow order: ${manifestOrder.join(", ")}`
+);
+
 // --- Skills -----------------------------------------------------------------
 
 for (const skill of EXPECTED_SKILLS) {
