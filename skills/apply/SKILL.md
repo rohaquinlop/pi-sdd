@@ -19,4 +19,8 @@ Implement the tasks for an existing change.
    - If implementation reveals a fork the plan didn't anticipate — a genuinely ambiguous choice with real alternatives, not a trivial detail — ask the user with the clarification UI (the `clarification_ui` tool) before proceeding. List the recommended option first, marked "(Recommended)", plus up to three genuine alternatives; the UI's free-text option covers anything else.
    - If implementation reveals that `design.md` or `proposal.md` needs to change (a flawed assumption, a missed edge case, or the resolution of a fork above), edit that artifact directly and keep going — don't restart or ask permission for small course corrections, but do flag any change that alters the original scope.
 5. Only edit files that are either planning artifacts under `.sdd/changes/<name>/` or code required by a task — don't scope-creep into unrelated files.
-6. When all tasks are checked off, tell the user the change is ready for `/sdd:archive`.
+6. Once all tasks are checked off, before declaring the change ready, self-review:
+   - Review the full diff against `design.md`, `proposal.md`, and existing project conventions.
+   - Report the findings (bugs, convention drift, leftover comments, duplicated helpers, unused code) — even if the list is empty, say so.
+   - Fix/address each finding in the same pass. Don't wait for the user to ask for a review — this step runs by default.
+7. Tell the user the change is ready for `/sdd:archive`.
